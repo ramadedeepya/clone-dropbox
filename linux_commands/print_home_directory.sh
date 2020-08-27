@@ -7,3 +7,4 @@
     # 3) Execute the script before submission and confirm the output
 
 
+echo $HOME
