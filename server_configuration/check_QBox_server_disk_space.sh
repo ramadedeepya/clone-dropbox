@@ -12,6 +12,8 @@ requiredDiskSpaceInMB=4096     # 4 GB Disk Space
     #    Note that the filesystem name may be different on different servers, using that name may not work on all servers.
     #    Note that the Disk Space mounted at "/" is the disk space available for QBox.
     # 2) Execute the script before submission and confirm the output
+diskSpaceInMB=`df -m | awk '{if ($6 == "/") print $2}'`
+#echo $diskSpaceInMB
 
 if test $diskSpaceInMB -ge $requiredDiskSpaceInMB
    then
