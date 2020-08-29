@@ -1,1 +1,2 @@
-local_umask=022
+file_open_mode
+local_umask
