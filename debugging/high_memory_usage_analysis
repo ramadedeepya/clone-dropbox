@@ -1,0 +1,9 @@
+I have monitored the field 'RES' (obtained by using 'htop' command) to monitor the memory usage during the file transfers(upload/download).
+From the field 'RES' (resident size) which is the amount of actual physical memory consumed by a process, it is observed that 2028KB (2MB) was allocated for the first file transfer (upload/download) in case of version vsftpd_v1 while in version vsftpd_v5, memory allocation was 12140KB (12MB).
+Therefore, version vsftpd_v5 uses large amount of memory for a file transfer.
+In version vsftpd_v1, memory comsumption was observed to be constant and independent of the number of files transferred. In contrary, memory usage kept increasing by around 10MB with each file transfer in version vsftpd_v5.
+In the case of version vsftpd_v5, RES value has changed from 12140KB to 21965KB  for the second transfer, then to 31736KB for the third, to 41540KB for the forth and so on.
+Therefore, version vsftpd_v5 has the issue of memory usage increasing over the time.
+This memory issue was observed for both small (1.2MB) and large files (1GB).
+This issue was observed for both upload and download operations.
+This issue could be because of the memory leak where the allocated memory in the heap is not freed/deallocated and so is present even after the program terminates. Hence memory leak could be the reason for the increasing amounts of memory over the time (with each file transfer).
