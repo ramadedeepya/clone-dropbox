@@ -1,0 +1,4 @@
+Versions vsftpd_v2 and vsftpd_v3 have issues with downloading the files from the QBox server.
+Once the 'get' command (for downloading) is executed after connecting to the QBox server via ftp, the message "421 Service not available, remote server has closed connection" is shown.
+The QBox server does not crash. 
+On monitoring the processes using htop command, it is observed that the child processes of QBox server, which are created on connecting the ftp client to the server, are terminated (crashed) once the 'get' command is executed.
