@@ -1,0 +1,3 @@
+I have used the log file vsftpd.log to get information about the time taken for file transfer (upload/download).
+Version vsftpd_v1 takes around 3.3 seconds for uploading a 1GB file to the server and around 3.7 seconds for downloading a 1GB file from the server. 
+While version vsftpd_v2 takes very long time for a 1GB file upload. The trasfer rate in this version, the upload operation is taking only 0.7% of CPU time, thereby slowing down the transfer rate.
