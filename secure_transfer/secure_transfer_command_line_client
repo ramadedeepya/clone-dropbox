@@ -1,0 +1,9 @@
+Yes
+Generated the ssl certificate and key using the following command
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+The following lines are included in the vsftpd.conf file
+ssl_enable=YES
+ssl_tlsv1=YES
+rsa_cert_file=/home/crio-user/workspace/QBox/cert.pem
+rsa_private_key_file=/home/crio-user/workspace/QBox/key.pem
+debug_ssl=YES
