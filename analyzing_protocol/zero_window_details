@@ -1,0 +1,2 @@
+117
+Setting zero window size indicates that the receiver's (server/client) receive buffer is full and so cannot accept the incoming data from the sender (server/client). This tells the sender to pause the transmission of data.
